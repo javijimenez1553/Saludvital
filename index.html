@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALUDVITAL - Salud Prepagada</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f8fb;
+            color: #263238;
+        }
+
+        header {
+            background: #0066cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 8px;
+        }
+
+        nav {
+            background: #004c99;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #8fd3ff;
+        }
+
+        .hero {
+            padding: 70px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #e6f4ff, #ffffff);
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 28px;
+            background: #00a878;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 55px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #0066cc;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #0066cc;
+            margin-bottom: 12px;
+        }
+
+        .planes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .plan {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .plan h3 {
+            color: #0066cc;
+            font-size: 24px;
+        }
+
+        .precio {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #00a878;
+        }
+
+        .plan ul {
+            list-style: none;
+            line-height: 2;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #003b73;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SALUDVITAL</h1>
+    <p>Tu salud, nuestra prioridad</p>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#planes">Planes</a>
+    <a href="#afiliacion">Afiliación</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<section class="hero" id="inicio">
+    <h2>Cuida tu salud con SALUDVITAL</h2>
+    <p>
+        Planes de salud prepagada diseñados para brindarte
+        atención médica de calidad, acompañamiento y tranquilidad
+        cuando más lo necesitas.
+    </p>
+
+    <a href="#planes" class="boton">Conoce nuestros planes</a>
+</section>
+
+<section id="servicios">
+    <h2>Nuestros servicios</h2>
+
+    <div class="servicios">
+
+        <div class="card">
+            <h3>Consulta médica</h3>
+            <p>Accede a consultas médicas con profesionales de diferentes especialidades.</p>
+        </div>
+
+        <div class="card">
+            <h3>Telemedicina</h3>
+            <p>Recibe orientación médica desde cualquier lugar de manera rápida y segura.</p>
+        </div>
+
+        <div class="card">
+            <h3>Urgencias</h3>
+            <p>Atención y orientación para situaciones médicas que requieren atención inmediata.</p>
+        </div>
+
+        <div class="card">
+            <h3>Especialistas</h3>
+            <p>Acceso a diferentes especialidades médicas según el plan contratado.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="planes">
+    <h2>Planes SALUDVITAL</h2>
+
+    <div class="planes">
+
+        <div class="plan">
+            <h3>Plan Básico</h3>
+            <div class="precio">$89.900</div>
+
+            <ul>
+                <li>✓ Consulta médica</li>
+                <li>✓ Telemedicina</li>
+                <li>✓ Orientación médica</li>
+                <li>✓ Atención virtual</li>
+            </ul>
+
+            <a href="#afiliacion" class="boton">Elegir plan</a>
+        </div>
+
+        <div class="plan">
+            <h3>Plan Integral</h3>
+            <div class="precio">$149.900</div>
+
+            <ul>
+                <li>✓ Todo lo del Plan Básico</li>
+                <li>✓ Especialistas</li>
+                <li>✓ Atención prioritaria</li>
+                <li>✓ Beneficios adicionales</li>
+            </ul>
+
+            <a href="#afiliacion" class="boton">Elegir plan</a>
+        </div>
+
+        <div class="plan">
+            <h3>Plan Premium</h3>
+            <div class="precio">$219.900</div>
+
+            <ul>
+                <li>✓ Atención preferencial</li>
+                <li>✓ Especialistas</li>
+                <li>✓ Telemedicina 24/7</li>
+                <li>✓ Beneficios exclusivos</li>
+            </ul>
+
+            <a href="#afiliacion" class="boton">Elegir plan</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="afiliacion">
+    <h2>Solicita tu afiliación</h2>
+
+    <form onsubmit="enviarFormulario(event)">
+
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+
+        <input type="tel" id="telefono" placeholder="Teléfono" required>
+
+        <select id="plan" required>
+            <option value="">Selecciona un plan</option>
+            <option>Plan Básico</option>
+            <option>Plan Integral</option>
+            <option>Plan Premium</option>
+        </select>
+
+        <button type="submit">Solicitar afiliación</button>
+
+    </form>
+</section>
+
+<section id="contacto">
+    <h2>Contáctanos</h2>
+
+    <div class="card">
+        <p><strong>Teléfono:</strong> 01 8000 123 456</p>
+        <p><strong>Email:</strong> contacto@saludvital.com</p>
+        <p><strong>Horario:</strong> Lunes a viernes, 8:00 a.m. - 5:00 p.m.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 SALUDVITAL - Proyecto académico</p>
+    <p>Todos los derechos reservados.</p>
+</footer>
+
+<script>
+
+function enviarFormulario(event) {
+
+    event.preventDefault();
+
+    const nombre = document.getElementById("nombre").value;
+
+    alert("Gracias, " + nombre +
+          ". Hemos recibido tu solicitud de afiliación.");
+
+}
+
+</script>
+
+</body>
+  </html>
