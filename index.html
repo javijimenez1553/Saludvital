@@ -1,370 +1,1119 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SALUDVITAL - Salud Prepagada</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+<title>Vida y Bienestar | SALUDVITAL</title>
 
-        body {
-            background: #f4f8fb;
-            color: #263238;
-        }
+<style>
 
-        header {
-    background: linear-gradient(135deg, #0066cc, #008fd5);
-    color: white;
-    padding: 28px 20px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-.logo {
-    font-size: 34px;
-    font-weight: bold;
-    letter-spacing: 1px;
+html{
+    scroll-behavior:smooth;
 }
 
-header small {
-    display: block;
-    margin-top: 8px;
-    opacity: 0.9;
-    font-size: 14px;
+body{
+    background:#f4f8fb;
+    color:#263238;
+    line-height:1.6;
 }
 
-        header h1 {
-            font-size: 30px;
-        }
+/* HEADER */
 
-        header p {
-            margin-top: 8px;
-        }
+header{
+    background:linear-gradient(135deg,#0066cc,#00a8d6);
+    color:white;
+    padding:35px 20px;
+    text-align:center;
+}
 
-        nav {
-            background: #004c99;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 10px;
-        }
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 8px 15px;
-            font-weight: bold;
-        }
+header p{
+    font-size:19px;
+    margin-top:5px;
+}
 
-        nav a:hover {
-            color: #8fd3ff;
-        }
+header small{
+    display:block;
+    margin-top:8px;
+    opacity:.9;
+}
 
-        .hero {
-            padding: 70px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #e6f4ff, #ffffff);
-        }
+/* MENU */
 
-        .hero h2 {
-            font-size: 38px;
-            color: #0066cc;
-            margin-bottom: 15px;
-        }
+nav{
+    background:#003f7d;
+    padding:14px 10px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            font-size: 18px;
-            line-height: 1.6;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:5px 14px;
+    font-weight:bold;
+    transition:.3s;
+}
 
-        .boton {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 28px;
-            background: #00a878;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
+nav a:hover{
+    color:#8de5ff;
+}
 
-        section {
-            padding: 55px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+/* HERO */
 
-        section h2 {
-            text-align: center;
-            color: #0066cc;
-            margin-bottom: 30px;
-            font-size: 30px;
-        }
+.hero{
+    min-height:430px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
+    background:linear-gradient(135deg,#e7f6ff,#ffffff);
+}
 
-        .servicios {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+.hero-content{
+    max-width:850px;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: center;
-        }
+.hero h1{
+    font-size:44px;
+    color:#0066cc;
+    margin-bottom:20px;
+}
 
-        .card h3 {
-            color: #0066cc;
-            margin-bottom: 12px;
-        }
+.hero p{
+    font-size:20px;
+    color:#455a64;
+}
 
-        .planes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 28px;
+    background:#00a878;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
 
-        .plan {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
+.btn:hover{
+    transform:translateY(-3px);
+}
 
-        .plan h3 {
-            color: #0066cc;
-            font-size: 24px;
-        }
+/* SECCIONES */
 
-        .precio {
-            font-size: 28px;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #00a878;
-        }
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:70px 20px;
+}
 
-        .plan ul {
-            list-style: none;
-            line-height: 2;
-        }
+.section-title{
+    text-align:center;
+    color:#0066cc;
+    font-size:32px;
+    margin-bottom:15px;
+}
 
-        form {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
+.section-subtitle{
+    text-align:center;
+    color:#607d8b;
+    margin-bottom:40px;
+}
 
-        input, textarea, select {
-            width: 100%;
-            padding: 13px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
+/* SERVICIOS */
 
-        button {
-            width: 100%;
-            padding: 14px;
-            background: #0066cc;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: bold;
-        }
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
 
-        footer {
-            background: #003b73;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-        }
+.card{
+    background:white;
+    padding:28px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
 
-        @media (max-width: 600px) {
-            .hero h2 {
-                font-size: 30px;
-            }
+.card:hover{
+    transform:translateY(-5px);
+}
 
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+.icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#0066cc;
+    margin-bottom:10px;
+}
+
+/* FICHA TECNICA */
+
+.ficha{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 25px rgba(0,0,0,.10);
+}
+
+.fila{
+    display:grid;
+    grid-template-columns:30% 70%;
+    border-bottom:1px solid #dce6ec;
+}
+
+.fila:last-child{
+    border-bottom:none;
+}
+
+.titulo{
+    background:#0066cc;
+    color:white;
+    padding:18px;
+    font-weight:bold;
+}
+
+.contenido{
+    padding:18px;
+    background:#fff;
+}
+
+.contenido ul{
+    padding-left:20px;
+}
+
+.contenido li{
+    margin-bottom:6px;
+}
+
+/* PLANES */
+
+.planes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.plan{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.plan.destacado{
+    border:3px solid #00a878;
+    transform:scale(1.02);
+}
+
+.plan h3{
+    color:#0066cc;
+    font-size:24px;
+}
+
+.precio{
+    color:#00a878;
+    font-size:30px;
+    font-weight:bold;
+    margin:18px 0;
+}
+
+.plan ul{
+    list-style:none;
+    margin-bottom:20px;
+}
+
+.plan li{
+    margin:8px 0;
+}
+
+/* FORMULARIO */
+
+.formulario{
+    max-width:650px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.formulario label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea{
+    width:100%;
+    padding:13px;
+    margin-bottom:18px;
+    border:1px solid #ccd6dc;
+    border-radius:7px;
+    font-size:15px;
+}
+
+.formulario textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.formulario button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    background:#0066cc;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* CONTACTO */
+
+.contacto{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.contacto .card{
+    text-align:center;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    text-decoration:none;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
+    z-index:200;
+}
+
+/* FOOTER */
+
+footer{
+    background:#003f7d;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer p{
+    margin:5px 0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+    .logo{
+        font-size:30px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    nav{
+        position:relative;
+    }
+
+    nav a{
+        margin:5px 8px;
+        font-size:14px;
+    }
+
+    .fila{
+        grid-template-columns:1fr;
+    }
+
+    .titulo{
+        padding:14px;
+    }
+
+    .contenido{
+        padding:18px;
+    }
+
+    section{
+        padding:50px 15px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
+
     <div class="logo">💙 SALUDVITAL</div>
-    <p>Tu salud, nuestra prioridad</p>
-    <small>Servicios de salud prepagada</small>
+
+    <p>Vida y Bienestar – Medicina Complementaria</p>
+
+    <small>Proyecto académico</small>
+
 </header>
 
+
 <nav>
+
     <a href="#inicio">Inicio</a>
+
     <a href="#servicios">Servicios</a>
+
+    <a href="#ficha">Ficha técnica</a>
+
     <a href="#planes">Planes</a>
-    <a href="#afiliacion">Afiliación</a>
+
+    <a href="#afiliacion">Preafiliación</a>
+
     <a href="#contacto">Contacto</a>
+
 </nav>
 
-<section class="hero" id="inicio">
-    <h2>Cuida tu salud con SALUDVITAL</h2>
-    <p>
-        Planes de salud prepagada diseñados para brindarte
-        atención médica de calidad, acompañamiento y tranquilidad
-        cuando más lo necesitas.
-    </p>
 
-    <a href="#planes" class="boton">Conoce nuestros planes</a>
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <h1>Tu salud, nuestra prioridad</h1>
+
+        <p>
+            Soluciones de medicina complementaria con atención
+            virtual, servicios domiciliarios, orientación médica
+            y acompañamiento personalizado.
+        </p>
+
+        <a class="btn" href="#ficha">
+            Conocer el servicio
+        </a>
+
+    </div>
+
 </section>
 
+
 <section id="servicios">
-    <h2>Nuestros servicios</h2>
 
-    <div class="servicios">
+    <h2 class="section-title">Nuestros servicios</h2>
+
+    <p class="section-subtitle">
+        Atención diseñada para brindar soluciones rápidas y accesibles.
+    </p>
+
+
+    <div class="services">
 
         <div class="card">
-            <h3>Consulta médica</h3>
-            <p>Accede a consultas médicas con profesionales de diferentes especialidades.</p>
+
+            <div class="icon">🩺</div>
+
+            <h3>Atención médica</h3>
+
+            <p>
+                Orientación y consulta con médico general
+                mediante diferentes canales de atención.
+            </p>
+
         </div>
 
-        <div class="card">
-            <h3>Telemedicina</h3>
-            <p>Recibe orientación médica desde cualquier lugar de manera rápida y segura.</p>
-        </div>
 
         <div class="card">
-            <h3>Urgencias</h3>
-            <p>Atención y orientación para situaciones médicas que requieren atención inmediata.</p>
+
+            <div class="icon">📱</div>
+
+            <h3>Teleconsulta</h3>
+
+            <p>
+                Atención médica virtual para medicina general
+                y pediatría.
+            </p>
+
         </div>
 
+
         <div class="card">
-            <h3>Especialistas</h3>
-            <p>Acceso a diferentes especialidades médicas según el plan contratado.</p>
+
+            <div class="icon">🏠</div>
+
+            <h3>Médico domiciliario</h3>
+
+            <p>
+                Servicio de atención médica en el domicilio
+                del paciente.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🚑</div>
+
+            <h3>Coordinación de ambulancia</h3>
+
+            <p>
+                Coordinación del servicio de ambulancia
+                de acuerdo con disponibilidad y prioridad.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">👶</div>
+
+            <h3>Pediatría domiciliaria</h3>
+
+            <p>
+                Atención pediátrica domiciliaria para
+                pacientes hasta los 17 años.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">💬</div>
+
+            <h3>Atención por WhatsApp</h3>
+
+            <p>
+                Canal de atención rápida para orientación,
+                solicitudes y seguimiento.
+            </p>
+
         </div>
 
     </div>
+
 </section>
 
+
+<section id="ficha">
+
+    <h2 class="section-title">
+        Ficha técnica del servicio
+    </h2>
+
+    <p class="section-subtitle">
+        Información general de Vida y Bienestar – Medicina Complementaria
+    </p>
+
+
+    <div class="ficha">
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Nombre del servicio
+            </div>
+
+            <div class="contenido">
+                Vida y Bienestar – Medicina Complementaria
+            </div>
+
+        </div>
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Responsables del servicio
+            </div>
+
+            <div class="contenido">
+                Juan Castellanos – Jonathan Montoya –
+                Michale Bermúdez – Slendy Niño
+            </div>
+
+        </div>
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Requisitos técnicos de desarrollo
+            </div>
+
+            <div class="contenido">
+
+                <ul>
+
+                    <li>Línea empresarial WhatsApp Business.</li>
+
+                    <li>Página web con formulario de atención y preafiliación.</li>
+
+                    <li>Plataforma para videollamada.</li>
+
+                    <li>Historia clínica electrónica.</li>
+
+                    <li>2 computadores + 4 celulares.</li>
+
+                    <li>Internet de alta velocidad.</li>
+
+                    <li>Pasarela de pagos Nequi, Daviplata, PSE,
+                    tarjetas débito y crédito.</li>
+
+                    <li>Convenios con médicos generales,
+                    pediatras y ambulancias.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Descripción técnica del servicio
+            </div>
+
+            <div class="contenido">
+
+                Prestación de servicios de medicina complementaria
+                mediante atención virtual, médico general y pediatría,
+                consulta a domicilio, orientación médica, coordinación
+                de ambulancia y seguimiento clínico.
+
+            </div>
+
+        </div>
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Valor agregado del servicio
+            </div>
+
+            <div class="contenido">
+
+                <ul>
+
+                    <li>Atención rápida por WhatsApp.</li>
+
+                    <li>Servicio a domicilio en menos de 60 minutos,
+                    según disponibilidad y ubicación.</li>
+
+                    <li>Teleconsulta las 24 horas.</li>
+
+                    <li>Disponibilidad de domingo a domingo.</li>
+
+                    <li>Planes mensuales asequibles.</li>
+
+                    <li>Seguimiento personalizado.</li>
+
+                    <li>Menores costos operativos.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Requisitos legales
+            </div>
+
+            <div class="contenido">
+
+                <ul>
+
+                    <li>Ley 100 de 1993 – Sistema General de Seguridad Social en Salud.</li>
+
+                    <li>Ley 1438 de 2011 – Fortalecimiento del sistema de salud y atención primaria.</li>
+
+                    <li>Ley Estatutaria 1751 de 2015 – Derecho fundamental a la salud.</li>
+
+                    <li>Resolución 3100 de 2019 – Condiciones de habilitación de servicios de salud.</li>
+
+                    <li>Resolución 256 de 2016 – Sistema de información para monitoreo de calidad.</li>
+
+                    <li>Ley 1581 de 2012 – Protección de datos personales.</li>
+
+                    <li>Ley 23 de 1981 – Normas de ética médica.</li>
+
+                    <li>Registro Especial de Prestadores de Servicios de Salud (REPS).</li>
+
+                    <li>Decreto 780 de 2016 – Reglamentación del sector salud.</li>
+
+                </ul>
+
+                <p style="margin-top:15px;font-size:13px;color:#607d8b;">
+                    La información normativa se presenta con fines académicos
+                    y debe verificarse frente a la regulación vigente antes
+                    de utilizarse comercialmente.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Necesidad identificada del sector
+            </div>
+
+            <div class="contenido">
+
+                Existe una alta demanda de consultas médicas
+                domiciliarias y virtuales que permitan recibir
+                atención rápida sin necesidad de desplazarse,
+                especialmente para adultos mayores, niños y empresas.
+
+            </div>
+
+        </div>
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Características ofertadas
+            </div>
+
+            <div class="contenido">
+
+                <ul>
+
+                    <li>Atención por WhatsApp.</li>
+
+                    <li>Teleconsulta.</li>
+
+                    <li>Médico general domiciliario.</li>
+
+                    <li>Pediatría domiciliaria.</li>
+
+                    <li>Coordinación de ambulancia.</li>
+
+                    <li>Seguimiento clínico.</li>
+
+                    <li>Atención preventiva.</li>
+
+                    <li>Planes individuales, familiares y empresariales.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Presentación y etiquetas comerciales
+            </div>
+
+            <div class="contenido">
+
+                <strong>VIDA Y BIENESTAR</strong><br>
+
+                Medicina complementaria · Teleconsulta · Atención domiciliaria
+
+            </div>
+
+        </div>
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Controles planteados en el desarrollo
+            </div>
+
+            <div class="contenido">
+
+                <ul>
+
+                    <li>Encuestas de satisfacción.</li>
+
+                    <li>Auditorías de historias clínicas.</li>
+
+                    <li>Indicadores de tiempos de respuesta.</li>
+
+                    <li>Seguimiento a pacientes.</li>
+
+                    <li>Control de calidad del servicio.</li>
+
+                    <li>Gestión de PQRS.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="fila">
+
+            <div class="titulo">
+                Tiempo de ejecución de la solución
+            </div>
+
+            <div class="contenido">
+
+                <ul>
+
+                    <li>Atención por WhatsApp: 5 a 15 minutos.</li>
+
+                    <li>Teleconsulta: menor a 1 hora.</li>
+
+                    <li>Visita domiciliaria: 1 a 3 horas según ubicación.</li>
+
+                    <li>Ambulancia: según disponibilidad y prioridad.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
 <section id="planes">
-    <h2>Planes SALUDVITAL</h2>
+
+    <h2 class="section-title">
+        Planes de servicio
+    </h2>
+
+    <p class="section-subtitle">
+        Opciones diseñadas para diferentes necesidades.
+    </p>
+
 
     <div class="planes">
 
+
         <div class="plan">
-            <h3>Plan Básico</h3>
+
+            <h3>Plan Individual</h3>
+
             <div class="precio">$89.900</div>
 
             <ul>
-                <li>✓ Consulta médica</li>
-                <li>✓ Telemedicina</li>
+
+                <li>✓ Teleconsulta</li>
                 <li>✓ Orientación médica</li>
-                <li>✓ Atención virtual</li>
+                <li>✓ Atención por WhatsApp</li>
+                <li>✓ Atención preventiva</li>
+
             </ul>
 
-            <a href="#afiliacion" class="boton">Elegir plan</a>
+            <a href="#afiliacion" class="btn">
+                Solicitar
+            </a>
+
         </div>
 
-        <div class="plan">
-            <h3>Plan Integral</h3>
+
+        <div class="plan destacado">
+
+            <h3>Plan Familiar</h3>
+
             <div class="precio">$149.900</div>
 
             <ul>
-                <li>✓ Todo lo del Plan Básico</li>
-                <li>✓ Especialistas</li>
-                <li>✓ Atención prioritaria</li>
-                <li>✓ Beneficios adicionales</li>
+
+                <li>✓ Teleconsulta</li>
+                <li>✓ Atención domiciliaria</li>
+                <li>✓ Pediatría</li>
+                <li>✓ Seguimiento clínico</li>
+                <li>✓ Atención por WhatsApp</li>
+
             </ul>
 
-            <a href="#afiliacion" class="boton">Elegir plan</a>
+            <a href="#afiliacion" class="btn">
+                Solicitar
+            </a>
+
         </div>
+
 
         <div class="plan">
-            <h3>Plan Premium</h3>
-            <div class="precio">$219.900</div>
+
+            <h3>Plan Empresarial</h3>
+
+            <div class="precio">Personalizado</div>
 
             <ul>
-                <li>✓ Atención preferencial</li>
-                <li>✓ Especialistas</li>
-                <li>✓ Telemedicina 24/7</li>
-                <li>✓ Beneficios exclusivos</li>
+
+                <li>✓ Atención para colaboradores</li>
+                <li>✓ Teleconsulta</li>
+                <li>✓ Orientación médica</li>
+                <li>✓ Seguimiento</li>
+                <li>✓ Atención preventiva</li>
+
             </ul>
 
-            <a href="#afiliacion" class="boton">Elegir plan</a>
+            <a href="#afiliacion" class="btn">
+                Solicitar
+            </a>
+
         </div>
 
+
     </div>
+
 </section>
+
 
 <section id="afiliacion">
-    <h2>Solicita tu afiliación</h2>
 
-    <form onsubmit="enviarFormulario(event)">
+    <h2 class="section-title">
+        Preafiliación
+    </h2>
 
-        <input type="text" id="nombre" placeholder="Nombre completo" required>
+    <p class="section-subtitle">
+        Déjanos tus datos y selecciona el servicio de interés.
+    </p>
 
-        <input type="email" id="email" placeholder="Correo electrónico" required>
 
-        <input type="tel" id="telefono" placeholder="Teléfono" required>
+    <form class="formulario"
+          onsubmit="enviarFormulario(event)">
+
+
+        <label>Nombre completo</label>
+
+        <input
+            type="text"
+            id="nombre"
+            placeholder="Ingrese su nombre"
+            required
+        >
+
+
+        <label>Correo electrónico</label>
+
+        <input
+            type="email"
+            id="correo"
+            placeholder="ejemplo@correo.com"
+            required
+        >
+
+
+        <label>Teléfono</label>
+
+        <input
+            type="tel"
+            id="telefono"
+            placeholder="Número de contacto"
+            required
+        >
+
+
+        <label>Tipo de plan</label>
 
         <select id="plan" required>
-            <option value="">Selecciona un plan</option>
-            <option>Plan Básico</option>
-            <option>Plan Integral</option>
-            <option>Plan Premium</option>
+
+            <option value="">
+                Seleccione una opción
+            </option>
+
+            <option>
+                Plan Individual
+            </option>
+
+            <option>
+                Plan Familiar
+            </option>
+
+            <option>
+                Plan Empresarial
+            </option>
+
         </select>
 
-        <button type="submit">Solicitar afiliación</button>
+
+        <label>Mensaje</label>
+
+        <textarea
+            id="mensaje"
+            placeholder="¿En qué podemos ayudarte?"
+        ></textarea>
+
+
+        <button type="submit">
+            Enviar solicitud
+        </button>
+
 
     </form>
+
 </section>
+
 
 <section id="contacto">
-    <h2>Contáctanos</h2>
 
-    <div class="card">
-        <p><strong>Teléfono:</strong> 01 8000 123 456</p>
-        <p><strong>Email:</strong> contacto@saludvital.com</p>
-        <p><strong>Horario:</strong> Lunes a viernes, 8:00 a.m. - 5:00 p.m.</p>
+    <h2 class="section-title">
+        Contacto
+    </h2>
+
+
+    <div class="contacto">
+
+
+        <div class="card">
+
+            <div class="icon">📱</div>
+
+            <h3>WhatsApp</h3>
+
+            <p>
+                Atención rápida y orientación.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📧</div>
+
+            <h3>Correo electrónico</h3>
+
+            <p>
+                contacto@saludvital.com
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🕐</div>
+
+            <h3>Horario</h3>
+
+            <p>
+                Domingo a domingo
+            </p>
+
+        </div>
+
+
     </div>
+
 </section>
 
+
+<a
+    class="whatsapp"
+    href="https://wa.me/573001234567"
+    target="_blank"
+    title="WhatsApp"
+>
+    💬
+</a>
+
+
 <footer>
-    <p>© 2026 SALUDVITAL - Proyecto académico</p>
-    <p>Todos los derechos reservados.</p>
+
+    <p><strong>💙 SALUDVITAL</strong></p>
+
+    <p>
+        Vida y Bienestar – Medicina Complementaria
+    </p>
+
+    <p>
+        © 2026 | Proyecto académico
+    </p>
+
+    <p style="font-size:12px;margin-top:12px;">
+        Este sitio web es una demostración académica
+        y no representa una entidad prestadora real de servicios de salud.
+    </p>
+
 </footer>
+
 
 <script>
 
-function enviarFormulario(event) {
+function enviarFormulario(event){
 
     event.preventDefault();
 
-    const nombre = document.getElementById("nombre").value;
+    const nombre =
+        document.getElementById("nombre").value;
 
-    alert("Gracias, " + nombre +
-          ". Hemos recibido tu solicitud de afiliación.");
+    const plan =
+        document.getElementById("plan").value;
+
+    alert(
+        "¡Solicitud recibida, " +
+        nombre +
+        "!\\n\\n" +
+        "Plan seleccionado: " +
+        plan +
+        "\\n\\n" +
+        "Esta demostración académica ha registrado tus datos correctamente."
+    );
 
 }
 
 </script>
 
+
 </body>
-  </html>
+    </html>
