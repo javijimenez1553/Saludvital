@@ -19,11 +19,25 @@
         }
 
         header {
-            background: #0066cc;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    background: linear-gradient(135deg, #0066cc, #008fd5);
+    color: white;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+header small {
+    display: block;
+    margin-top: 8px;
+    opacity: 0.9;
+    font-size: 14px;
+}
 
         header h1 {
             font-size: 30px;
@@ -197,8 +211,9 @@
 <body>
 
 <header>
-    <h1>SALUDVITAL</h1>
+    <div class="logo">💙 SALUDVITAL</div>
     <p>Tu salud, nuestra prioridad</p>
+    <small>Servicios de salud prepagada</small>
 </header>
 
 <nav>
