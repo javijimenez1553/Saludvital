@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="SALUDVITAL — Vida y Bienestar. Medicina complementaria, teleconsulta, atención domiciliaria, pediatría y coordinación de ambulancias. Proyecto académico.">
+
 <title>SALUDVITAL | Vida y Bienestar</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,549 +13,568 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
- --navy:#082b49;
- --blue:#0878bd;
- --cyan:#13b8c8;
- --mint:#e9fbf9;
- --ice:#f3f9fc;
- --text:#193247;
- --muted:#637789;
- --white:#fff;
- --line:#dbe8ef;
- --shadow:0 18px 50px rgba(10,49,77,.11);
- --radius:22px;
+--navy:#082b49;
+--blue:#0878bd;
+--cyan:#13b8c8;
+--mint:#e9fbf9;
+--ice:#f3f9fc;
+--text:#193247;
+--muted:#637789;
+--white:#ffffff;
+--line:#dbe8ef;
+--shadow:0 18px 50px rgba(10,49,77,.11);
+--radius:22px;
 }
 
 *{
- box-sizing:border-box;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html{
- scroll-behavior:smooth;
+scroll-behavior:smooth;
+scroll-padding-top:80px;
 }
 
 body{
- margin:0;
- font-family:Inter,Arial,sans-serif;
- color:var(--text);
- background:#fff;
- line-height:1.6;
+font-family:Inter,Arial,sans-serif;
+color:var(--text);
+background:#fff;
+line-height:1.6;
+}
+
+body.no-scroll{
+overflow:hidden;
 }
 
 a{
- text-decoration:none;
- color:inherit;
+text-decoration:none;
+color:inherit;
 }
 
 button{
- font:inherit;
- cursor:pointer;
+font:inherit;
+cursor:pointer;
 }
 
 .container{
- width:min(1160px,92%);
- margin:auto;
-}
-
-/* BARRA SUPERIOR */
-
-.topbar{
- background:var(--navy);
- color:#dcecf5;
- font-size:13px;
- padding:8px 0;
-}
-
-.topbar .container{
- display:flex;
- justify-content:space-between;
- gap:20px;
+width:min(1160px,92%);
+margin:auto;
 }
 
 /* HEADER */
 
 header{
- position:sticky;
- top:0;
- z-index:1000;
- background:rgba(255,255,255,.96);
- backdrop-filter:blur(12px);
- border-bottom:1px solid rgba(219,232,239,.8);
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.97);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--line);
 }
 
 .nav{
- height:76px;
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:25px;
+height:74px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
 }
 
 .brand{
- display:flex;
- align-items:center;
- gap:11px;
+display:flex;
+align-items:center;
+gap:10px;
 }
 
 .logo{
- width:43px;
- height:43px;
- border-radius:14px;
- background:linear-gradient(135deg,var(--blue),var(--cyan));
- display:grid;
- place-items:center;
- color:#fff;
- font-size:24px;
- font-weight:800;
- box-shadow:0 8px 20px rgba(8,120,189,.2);
+width:43px;
+height:43px;
+border-radius:14px;
+background:linear-gradient(135deg,var(--blue),var(--cyan));
+display:grid;
+place-items:center;
+color:white;
+font-size:25px;
+font-weight:800;
+box-shadow:0 8px 20px rgba(8,120,189,.2);
 }
 
 .brand strong{
- font-family:"Plus Jakarta Sans";
- font-size:21px;
- color:var(--navy);
- display:block;
- line-height:1;
+font-family:"Plus Jakarta Sans";
+font-size:20px;
+color:var(--navy);
+display:block;
+line-height:1;
 }
 
-.brand span{
- font-size:10px;
- color:var(--muted);
- letter-spacing:.6px;
+.brand small{
+font-size:9px;
+color:var(--muted);
+letter-spacing:.7px;
 }
 
 nav{
- display:flex;
- align-items:center;
- gap:25px;
- font-size:14px;
- font-weight:700;
- color:#466174;
+display:flex;
+align-items:center;
+gap:25px;
+font-size:13px;
+font-weight:700;
+color:#466174;
 }
 
 nav a:hover{
- color:var(--blue);
+color:var(--blue);
 }
 
 .nav-cta{
- padding:11px 17px;
- border-radius:12px;
- background:var(--navy);
- color:#fff;
+padding:11px 17px;
+border-radius:12px;
+background:var(--navy);
+color:#fff!important;
+}
+
+.menu-button{
+display:none;
+border:0;
+background:var(--ice);
+color:var(--navy);
+width:43px;
+height:43px;
+border-radius:12px;
+font-size:24px;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu{
+display:none;
+background:#fff;
+border-top:1px solid var(--line);
+box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.mobile-menu.active{
+display:block;
+}
+
+.mobile-menu a{
+display:block;
+padding:15px 20px;
+border-bottom:1px solid #edf2f5;
+font-weight:700;
+color:var(--navy);
+}
+
+.mobile-menu a:last-child{
+color:#fff;
+background:var(--blue);
+margin:12px 16px;
+border-radius:12px;
+text-align:center;
+border:0;
 }
 
 /* HERO */
 
 .hero{
- background:linear-gradient(
- 120deg,
- #eef9fc 0%,
- #fff 55%,
- #edf9f7 100%
- );
- padding:76px 0 60px;
- overflow:hidden;
+background:linear-gradient(120deg,#eef9fc 0%,#fff 55%,#edf9f7 100%);
+padding:75px 0 60px;
 }
 
 .hero-grid{
- display:grid;
- grid-template-columns:1.03fr .97fr;
- align-items:center;
- gap:55px;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:50px;
 }
 
 .eyebrow{
- display:inline-flex;
- align-items:center;
- gap:8px;
- padding:7px 12px;
- border-radius:30px;
- background:#e4f7fb;
- color:#08749e;
- font-size:12px;
- font-weight:800;
- margin-bottom:18px;
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:7px 12px;
+border-radius:30px;
+background:#e4f7fb;
+color:#08749e;
+font-size:11px;
+font-weight:800;
+margin-bottom:18px;
 }
 
 .eyebrow i{
- width:7px;
- height:7px;
- border-radius:50%;
- background:#12b7a6;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#12b7a6;
 }
 
 h1,h2,h3{
- font-family:"Plus Jakarta Sans",Inter,sans-serif;
- line-height:1.15;
- color:var(--navy);
- margin:0;
+font-family:"Plus Jakarta Sans",Inter,sans-serif;
+line-height:1.15;
+color:var(--navy);
 }
 
 h1{
- font-size:clamp(40px,5vw,65px);
- letter-spacing:-2.5px;
+font-size:clamp(40px,5vw,64px);
+letter-spacing:-2.5px;
 }
 
 .hero p{
- font-size:18px;
- color:#587084;
- max-width:610px;
- margin:22px 0 28px;
+font-size:18px;
+color:#587084;
+max-width:600px;
+margin:22px 0 28px;
 }
 
 .actions{
- display:flex;
- flex-wrap:wrap;
- gap:12px;
+display:flex;
+flex-wrap:wrap;
+gap:12px;
 }
 
 .btn{
- display:inline-flex;
- align-items:center;
- justify-content:center;
- gap:8px;
- border:0;
- border-radius:13px;
- padding:13px 20px;
- font-weight:800;
- font-size:14px;
- transition:.2s;
-}
-
-.btn-primary{
- background:var(--blue);
- color:#fff;
- box-shadow:0 9px 25px rgba(8,120,189,.2);
-}
-
-.btn-secondary{
- background:#fff;
- border:1px solid var(--line);
- color:var(--navy);
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+border:0;
+border-radius:13px;
+padding:13px 20px;
+font-weight:800;
+font-size:13px;
+transition:.2s;
 }
 
 .btn:hover{
- transform:translateY(-2px);
+transform:translateY(-2px);
+}
+
+.btn-primary{
+background:var(--blue);
+color:white;
+box-shadow:0 9px 25px rgba(8,120,189,.2);
+}
+
+.btn-secondary{
+background:white;
+border:1px solid var(--line);
+color:var(--navy);
 }
 
 .hero-photo{
- position:relative;
+position:relative;
 }
 
 .hero-photo img{
- width:100%;
- height:480px;
- object-fit:cover;
- border-radius:32px;
- box-shadow:var(--shadow);
+width:100%;
+height:450px;
+object-fit:cover;
+border-radius:30px;
+box-shadow:var(--shadow);
 }
 
 .floating-card{
- position:absolute;
- left:-24px;
- bottom:25px;
- background:#fff;
- border:1px solid var(--line);
- border-radius:18px;
- padding:16px 18px;
- box-shadow:var(--shadow);
- display:flex;
- align-items:center;
- gap:12px;
+position:absolute;
+left:-20px;
+bottom:25px;
+background:white;
+border:1px solid var(--line);
+border-radius:18px;
+padding:15px;
+box-shadow:var(--shadow);
+display:flex;
+align-items:center;
+gap:10px;
 }
 
 .check{
- width:38px;
- height:38px;
- border-radius:12px;
- background:var(--mint);
- display:grid;
- place-items:center;
- color:#079c8d;
- font-weight:900;
+width:38px;
+height:38px;
+border-radius:12px;
+background:var(--mint);
+display:grid;
+place-items:center;
+color:#079c8d;
+font-weight:900;
 }
 
 .floating-card b{
- display:block;
- color:var(--navy);
- font-size:14px;
+display:block;
+font-size:13px;
+color:var(--navy);
 }
 
 .floating-card small{
- color:var(--muted);
+font-size:11px;
+color:var(--muted);
 }
 
-/* BENEFICIOS */
+/* TRUST */
 
 .trust{
- padding:20px 0;
- background:#fff;
- border-bottom:1px solid var(--line);
+padding:20px 0;
+border-bottom:1px solid var(--line);
 }
 
 .trust-grid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:18px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
 }
 
 .trust-item{
- display:flex;
- gap:13px;
- align-items:center;
- padding:13px;
+display:flex;
+gap:12px;
+align-items:center;
+padding:12px;
 }
 
 .trust-icon{
- font-size:23px;
+font-size:23px;
 }
 
 .trust-item b{
- display:block;
- font-size:14px;
- color:var(--navy);
+display:block;
+font-size:13px;
+color:var(--navy);
 }
 
 .trust-item span{
- font-size:12px;
- color:var(--muted);
+font-size:11px;
+color:var(--muted);
 }
 
-/* SECCIONES */
+/* SECTIONS */
 
 .section{
- padding:82px 0;
+padding:80px 0;
 }
 
 .section.alt{
- background:var(--ice);
+background:var(--ice);
 }
 
 .section-head{
- text-align:center;
- max-width:720px;
- margin:0 auto 42px;
+text-align:center;
+max-width:720px;
+margin:0 auto 40px;
 }
 
 .kicker{
- color:var(--blue);
- font-size:12px;
- font-weight:900;
- letter-spacing:1.3px;
- text-transform:uppercase;
- margin-bottom:9px;
+color:var(--blue);
+font-size:11px;
+font-weight:900;
+letter-spacing:1.3px;
+text-transform:uppercase;
+margin-bottom:9px;
 }
 
 .section-head h2{
- font-size:clamp(30px,4vw,43px);
+font-size:clamp(29px,4vw,43px);
 }
 
 .section-head p{
- color:var(--muted);
- margin:13px 0 0;
+color:var(--muted);
+margin-top:13px;
+font-size:14px;
 }
 
-/* SERVICIOS */
+/* SERVICES */
 
 .services{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:20px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
 .service-card{
- background:#fff;
- border:1px solid var(--line);
- border-radius:var(--radius);
- overflow:hidden;
- box-shadow:0 7px 25px rgba(10,49,77,.055);
- transition:.25s;
+background:#fff;
+border:1px solid var(--line);
+border-radius:var(--radius);
+overflow:hidden;
+box-shadow:0 7px 25px rgba(10,49,77,.055);
+transition:.25s;
+cursor:pointer;
 }
 
 .service-card:hover{
- transform:translateY(-5px);
- box-shadow:var(--shadow);
+transform:translateY(-5px);
+box-shadow:var(--shadow);
 }
 
 .service-img{
- height:205px;
- overflow:hidden;
+height:205px;
+overflow:hidden;
 }
 
 .service-img img{
- width:100%;
- height:100%;
- object-fit:cover;
- transition:.4s;
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.4s;
 }
 
-.service-card:hover .service-img img{
- transform:scale(1.04);
+.service-card:hover img{
+transform:scale(1.04);
 }
 
 .service-body{
- padding:21px;
+padding:20px;
 }
 
 .service-body h3{
- font-size:19px;
- margin-bottom:8px;
+font-size:18px;
+margin-bottom:7px;
 }
 
 .service-body p{
- color:var(--muted);
- font-size:13px;
- margin:0 0 16px;
+font-size:12px;
+color:var(--muted);
+margin-bottom:15px;
 }
 
 .link-btn{
- border:0;
- background:none;
- color:var(--blue);
- font-weight:900;
- padding:0;
- font-size:13px;
+border:0;
+background:none;
+color:var(--blue);
+font-weight:900;
+font-size:12px;
+padding:0;
 }
 
-/* POR QUE */
+/* WHY */
 
 .why{
- display:grid;
- grid-template-columns:.9fr 1.1fr;
- gap:55px;
- align-items:center;
+display:grid;
+grid-template-columns:.9fr 1.1fr;
+gap:50px;
+align-items:center;
 }
 
 .why-photo img{
- width:100%;
- height:430px;
- object-fit:cover;
- border-radius:28px;
- box-shadow:var(--shadow);
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:28px;
+box-shadow:var(--shadow);
 }
 
 .features{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:18px;
- margin-top:25px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+margin-top:24px;
 }
 
 .feature{
- padding:18px;
- border:1px solid var(--line);
- border-radius:17px;
- background:#fff;
+padding:18px;
+border:1px solid var(--line);
+border-radius:17px;
+background:#fff;
 }
 
 .feature b{
- display:block;
- color:var(--navy);
- margin-bottom:5px;
+display:block;
+color:var(--navy);
+margin-bottom:5px;
+font-size:13px;
 }
 
 .feature span{
- font-size:13px;
- color:var(--muted);
+font-size:12px;
+color:var(--muted);
 }
 
-/* PASOS */
+/* STEPS */
 
 .steps{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:14px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
 }
 
 .step{
- background:#fff;
- border:1px solid var(--line);
- border-radius:18px;
- padding:23px;
- position:relative;
+background:#fff;
+border:1px solid var(--line);
+border-radius:18px;
+padding:22px;
 }
 
 .step-num{
- font-size:12px;
- font-weight:900;
- color:var(--blue);
- margin-bottom:18px;
+font-size:11px;
+font-weight:900;
+color:var(--blue);
+margin-bottom:16px;
 }
 
 .step h3{
- font-size:16px;
- margin-bottom:8px;
+font-size:16px;
+margin-bottom:8px;
 }
 
 .step p{
- font-size:13px;
- color:var(--muted);
- margin:0;
+font-size:12px;
+color:var(--muted);
 }
 
-/* COBERTURA */
+/* COVERAGE */
 
 .coverage{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:40px;
- align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
 }
 
 .coverage-map{
- min-height:390px;
- border-radius:28px;
- background:linear-gradient(145deg,#e8f5fa,#f6fbfd);
- position:relative;
- border:1px solid var(--line);
- overflow:hidden;
+min-height:380px;
+border-radius:28px;
+background:linear-gradient(145deg,#e8f5fa,#f6fbfd);
+position:relative;
+border:1px solid var(--line);
+overflow:hidden;
 }
 
 .coverage-map:before{
- content:"BOGOTÁ D.C.";
- position:absolute;
- inset:0;
- display:grid;
- place-items:center;
- color:#b5d1dd;
- font-family:"Plus Jakarta Sans";
- font-size:40px;
- font-weight:800;
- letter-spacing:3px;
- transform:rotate(-14deg);
+content:"BOGOTÁ D.C.";
+position:absolute;
+inset:0;
+display:grid;
+place-items:center;
+color:#b5d1dd;
+font-family:"Plus Jakarta Sans";
+font-size:40px;
+font-weight:800;
+letter-spacing:3px;
+transform:rotate(-14deg);
 }
 
 .pin{
- position:absolute;
- width:15px;
- height:15px;
- background:var(--blue);
- border:4px solid #fff;
- border-radius:50%;
- box-shadow:0 4px 12px rgba(8,120,189,.35);
-}
-
-.pin:after{
- content:"";
- position:absolute;
- inset:-9px;
- border:1px solid rgba(8,120,189,.25);
- border-radius:50%;
+position:absolute;
+width:15px;
+height:15px;
+background:var(--blue);
+border:4px solid #fff;
+border-radius:50%;
+box-shadow:0 4px 12px rgba(8,120,189,.35);
 }
 
 .pin span{
- position:absolute;
- left:18px;
- top:-9px;
- white-space:nowrap;
- background:#fff;
- padding:4px 7px;
- border-radius:7px;
- font-size:10px;
- color:var(--navy);
- font-weight:800;
- box-shadow:0 4px 12px rgba(0,0,0,.08);
+position:absolute;
+left:18px;
+top:-8px;
+white-space:nowrap;
+background:#fff;
+padding:4px 7px;
+border-radius:7px;
+font-size:10px;
+color:var(--navy);
+font-weight:800;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .p1{left:72%;top:23%}
@@ -563,610 +584,761 @@ h1{
 .p5{left:38%;top:76%}
 
 .coverage-list{
- display:grid;
- gap:12px;
- margin-top:24px;
+display:grid;
+gap:12px;
+margin-top:23px;
 }
 
 .zone{
- display:flex;
- gap:13px;
- padding:13px 15px;
- background:#fff;
- border:1px solid var(--line);
- border-radius:14px;
+display:flex;
+gap:12px;
+padding:13px 15px;
+background:#fff;
+border:1px solid var(--line);
+border-radius:14px;
 }
 
 .zone b{
- font-size:13px;
- color:var(--navy);
+font-size:13px;
+color:var(--navy);
 }
 
 .zone span{
- font-size:12px;
- color:var(--muted);
- display:block;
+font-size:11px;
+color:var(--muted);
+display:block;
 }
 
-/* PLANES */
+/* PLANS */
 
 .plans{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:20px;
- align-items:stretch;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
 .plan{
- background:#fff;
- border:1px solid var(--line);
- border-radius:22px;
- padding:28px;
- position:relative;
- box-shadow:0 7px 25px rgba(10,49,77,.05);
+background:#fff;
+border:1px solid var(--line);
+border-radius:22px;
+padding:27px;
+position:relative;
+box-shadow:0 7px 25px rgba(10,49,77,.05);
 }
 
 .plan.featured{
- border:2px solid var(--blue);
- transform:translateY(-8px);
+border:2px solid var(--blue);
+transform:translateY(-7px);
 }
 
 .badge{
- position:absolute;
- right:18px;
- top:18px;
- background:#e5f7fb;
- color:#08749e;
- padding:5px 9px;
- border-radius:20px;
- font-size:10px;
- font-weight:900;
+position:absolute;
+right:17px;
+top:17px;
+background:#e5f7fb;
+color:#08749e;
+padding:5px 9px;
+border-radius:20px;
+font-size:9px;
+font-weight:900;
 }
 
 .plan h3{
- font-size:21px;
+font-size:20px;
 }
 
 .price{
- font-family:"Plus Jakarta Sans";
- font-size:31px;
- color:var(--navy);
- font-weight:800;
- margin:16px 0 5px;
+font-family:"Plus Jakarta Sans";
+font-size:30px;
+color:var(--navy);
+font-weight:800;
+margin:15px 0 5px;
 }
 
 .price small{
- font-family:Inter;
- font-size:12px;
- color:var(--muted);
- font-weight:500;
+font-family:Inter;
+font-size:11px;
+color:var(--muted);
+font-weight:500;
 }
 
 .plan p{
- font-size:13px;
- color:var(--muted);
- min-height:42px;
+font-size:12px;
+color:var(--muted);
+min-height:40px;
 }
 
 .plan ul{
- list-style:none;
- padding:0;
- margin:20px 0;
+list-style:none;
+margin:18px 0;
 }
 
 .plan li{
- font-size:13px;
- margin:10px 0;
- color:#536b7c;
+font-size:12px;
+margin:9px 0;
+color:#536b7c;
 }
 
 .plan li:before{
- content:"✓";
- color:#0b9d8d;
- font-weight:900;
- margin-right:8px;
+content:"✓";
+color:#0b9d8d;
+font-weight:900;
+margin-right:8px;
 }
 
 .plan .btn{
- width:100%;
+width:100%;
 }
 
-/* CONTACTO */
+/* CONTACT */
 
 .contact{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:25px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
 }
 
 .contact-card{
- background:#fff;
- border:1px solid var(--line);
- border-radius:22px;
- padding:30px;
+background:#fff;
+border:1px solid var(--line);
+border-radius:22px;
+padding:29px;
 }
 
 .contact-card h3{
- font-size:23px;
- margin-bottom:15px;
+font-size:22px;
+margin-bottom:14px;
 }
 
 .contact-line{
- display:flex;
- gap:12px;
- padding:13px 0;
- border-bottom:1px solid #edf2f5;
+display:flex;
+gap:12px;
+padding:13px 0;
+border-bottom:1px solid #edf2f5;
 }
 
 .contact-line:last-child{
- border:0;
+border:0;
 }
 
 .contact-line b{
- font-size:13px;
- color:var(--navy);
- display:block;
+display:block;
+font-size:12px;
+color:var(--navy);
 }
 
 .contact-line span{
- font-size:12px;
- color:var(--muted);
+font-size:11px;
+color:var(--muted);
 }
 
-/* FICHA */
+/* ACADEMIC */
 
 .academic{
- background:#071f35;
- color:#d7e6ef;
- padding:65px 0;
+background:#071f35;
+color:#d7e6ef;
+padding:62px 0;
 }
 
 .academic h2{
- color:#fff;
- font-size:31px;
+color:white;
+font-size:31px;
 }
 
 .academic p{
- color:#a9c0ce;
- font-size:13px;
+color:#a9c0ce;
+font-size:12px;
+margin-top:12px;
 }
 
 .laws{
- display:flex;
- flex-wrap:wrap;
- gap:8px;
- margin-top:20px;
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:18px;
 }
 
 .laws span{
- border:1px solid rgba(255,255,255,.14);
- padding:7px 10px;
- border-radius:10px;
- font-size:11px;
+border:1px solid rgba(255,255,255,.14);
+padding:7px 10px;
+border-radius:10px;
+font-size:10px;
 }
 
 /* FOOTER */
 
 footer{
- background:#041728;
- color:#8ea8b8;
- padding:24px 0;
- font-size:11px;
+background:#041728;
+color:#8ea8b8;
+padding:23px 0;
+font-size:10px;
 }
 
 footer .container{
- display:flex;
- justify-content:space-between;
- gap:15px;
- align-items:center;
+display:flex;
+justify-content:space-between;
+gap:15px;
+align-items:center;
 }
 
 .academic-link{
- color:#cfe5ee;
+color:#cfe5ee;
 }
 
 /* WHATSAPP */
 
 .whatsapp{
- position:fixed;
- right:22px;
- bottom:22px;
- width:56px;
- height:56px;
- border-radius:50%;
- background:#17b66a;
- color:#fff;
- display:grid;
- place-items:center;
- font-size:25px;
- box-shadow:0 10px 25px rgba(10,80,50,.25);
- z-index:1200;
+position:fixed;
+right:20px;
+bottom:20px;
+width:56px;
+height:56px;
+border-radius:50%;
+background:#18b86b;
+color:#fff;
+display:grid;
+place-items:center;
+font-size:25px;
+box-shadow:0 10px 25px rgba(10,80,50,.25);
+z-index:1200;
 }
 
 /* MODAL */
 
 .modal{
- position:fixed;
- inset:0;
- z-index:2000;
- background:rgba(3,28,52,.72);
- backdrop-filter:blur(7px);
- display:flex;
- align-items:center;
- justify-content:center;
- padding:24px;
- opacity:0;
- visibility:hidden;
- pointer-events:none;
- transform:scale(.98);
- transition:.3s;
+position:fixed;
+inset:0;
+z-index:2000;
+background:rgba(3,28,52,.75);
+backdrop-filter:blur(7px);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+transition:.25s;
 }
 
 .modal.active{
- opacity:1;
- visibility:visible;
- pointer-events:auto;
- transform:scale(1);
+opacity:1;
+visibility:visible;
+pointer-events:auto;
 }
 
 .detail{
- width:min(1000px,100%);
- max-height:calc(100vh - 48px);
- overflow:auto;
- background:#fff;
- border-radius:25px;
- box-shadow:0 30px 80px rgba(0,0,0,.28);
- position:relative;
+width:min(950px,100%);
+max-height:calc(100vh - 40px);
+overflow:auto;
+background:#fff;
+border-radius:25px;
+box-shadow:0 30px 80px rgba(0,0,0,.3);
+position:relative;
 }
 
 .detail-img{
- height:300px;
+height:280px;
 }
 
 .detail-img img{
- width:100%;
- height:100%;
- object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 .detail-body{
- padding:35px 40px 40px;
+padding:32px 38px 38px;
 }
 
 .detail h2{
- font-size:34px;
+font-size:32px;
 }
 
 .detail-desc{
- color:var(--muted);
- max-width:800px;
+color:var(--muted);
+font-size:14px;
+margin-top:12px;
+}
+
+.detail-body h3{
+font-size:17px;
+margin-top:23px;
 }
 
 .detail ul{
- padding:0;
- list-style:none;
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:8px;
- margin:20px 0;
+padding:0;
+list-style:none;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin:17px 0 22px;
 }
 
 .detail li{
- background:#f3f9fc;
- padding:10px 12px;
- border-radius:10px;
- font-size:13px;
+background:var(--ice);
+padding:10px 12px;
+border-radius:10px;
+font-size:12px;
 }
 
 .close{
- position:absolute;
- right:17px;
- top:17px;
- z-index:3;
- width:42px;
- height:42px;
- border:0;
- border-radius:50%;
- background:rgba(255,255,255,.95);
- font-size:25px;
- line-height:42px;
- color:var(--navy);
- box-shadow:0 5px 18px rgba(0,0,0,.15);
+position:absolute;
+right:16px;
+top:16px;
+z-index:3;
+width:42px;
+height:42px;
+border:0;
+border-radius:50%;
+background:rgba(255,255,255,.95);
+font-size:25px;
+color:var(--navy);
+box-shadow:0 5px 18px rgba(0,0,0,.15);
 }
 
-/* RESPONSIVE */
+/* TABLET */
 
 @media(max-width:900px){
 
- nav{
-  gap:12px;
- }
-
- .hero-grid,
- .why,
- .coverage,
- .contact{
-  grid-template-columns:1fr;
- }
-
- .hero-photo{
-  max-width:650px;
-  margin:auto;
- }
-
- .services,
- .plans{
-  grid-template-columns:1fr 1fr;
- }
-
- .steps{
-  grid-template-columns:1fr 1fr;
- }
-
- .trust-grid{
-  grid-template-columns:1fr;
- }
-
- .why-photo{
-  order:2;
- }
+nav a:not(.nav-cta){
+display:none;
 }
+
+.menu-button{
+display:block;
+}
+
+nav{
+gap:10px;
+}
+
+.hero-grid,
+.why,
+.coverage,
+.contact{
+grid-template-columns:1fr;
+}
+
+.hero-photo{
+max-width:650px;
+margin:auto;
+}
+
+.services,
+.plans{
+grid-template-columns:1fr 1fr;
+}
+
+.steps{
+grid-template-columns:1fr 1fr;
+}
+
+.why-photo{
+order:2;
+}
+
+}
+
+/* CELULAR */
 
 @media(max-width:600px){
 
- .topbar{
-  display:none;
- }
-
- .nav{
-  height:67px;
- }
-
- .brand strong{
-  font-size:18px;
- }
-
- .brand span{
-  display:none;
- }
-
- nav a:not(.nav-cta){
-  display:none;
- }
-
- .nav-cta{
-  padding:9px 12px;
- }
-
- .hero{
-  padding:48px 0 35px;
- }
-
- h1{
-  font-size:41px;
-  letter-spacing:-1.7px;
- }
-
- .hero p{
-  font-size:16px;
- }
-
- .hero-photo img{
-  height:330px;
-  border-radius:23px;
- }
-
- .floating-card{
-  left:10px;
-  bottom:15px;
- }
-
- .section{
-  padding:62px 0;
- }
-
- .services,
- .plans,
- .features,
- .steps{
-  grid-template-columns:1fr;
- }
-
- .plan.featured{
-  transform:none;
- }
-
- .coverage-map{
-  min-height:310px;
- }
-
- .coverage-map:before{
-  font-size:27px;
- }
-
- .detail-img{
-  height:210px;
- }
-
- .detail-body{
-  padding:25px 20px 28px;
- }
-
- .detail h2{
-  font-size:28px;
- }
-
- .detail ul{
-  grid-template-columns:1fr;
- }
-
- .modal{
-  padding:10px;
- }
-
- .detail{
-  max-height:calc(100vh - 20px);
-  border-radius:18px;
- }
-
- footer .container{
-  display:block;
- }
-
- .whatsapp{
-  right:16px;
-  bottom:16px;
- }
+.container{
+width:calc(100% - 30px);
 }
+
+.nav{
+height:65px;
+}
+
+.logo{
+width:38px;
+height:38px;
+font-size:21px;
+}
+
+.brand strong{
+font-size:17px;
+}
+
+.brand small{
+display:none;
+}
+
+.nav-cta{
+display:none;
+}
+
+.hero{
+padding:40px 0 30px;
+}
+
+.hero-grid{
+gap:25px;
+}
+
+.eyebrow{
+font-size:9px;
+margin-bottom:13px;
+}
+
+h1{
+font-size:39px;
+letter-spacing:-1.5px;
+}
+
+.hero p{
+font-size:14px;
+line-height:1.55;
+margin:15px 0 20px;
+}
+
+.actions{
+display:grid;
+grid-template-columns:1fr;
+}
+
+.btn{
+width:100%;
+padding:13px 15px;
+}
+
+.hero-photo img{
+height:280px;
+border-radius:22px;
+}
+
+.floating-card{
+left:10px;
+bottom:12px;
+padding:10px 12px;
+}
+
+.check{
+width:32px;
+height:32px;
+}
+
+.floating-card b{
+font-size:11px;
+}
+
+.floating-card small{
+font-size:9px;
+}
+
+.trust{
+padding:7px 0;
+}
+
+.trust-grid{
+grid-template-columns:1fr;
+gap:0;
+}
+
+.trust-item{
+padding:9px 2px;
+}
+
+.trust-item b{
+font-size:11px;
+}
+
+.trust-item span{
+font-size:9px;
+}
+
+.section{
+padding:55px 0;
+}
+
+.section-head{
+margin-bottom:27px;
+}
+
+.section-head h2{
+font-size:28px;
+}
+
+.section-head p{
+font-size:12px;
+}
+
+.services,
+.plans,
+.features,
+.steps{
+grid-template-columns:1fr;
+}
+
+.service-img{
+height:185px;
+}
+
+.service-body{
+padding:17px;
+}
+
+.service-body h3{
+font-size:17px;
+}
+
+.why{
+gap:25px;
+}
+
+.why-photo img{
+height:270px;
+}
+
+.features{
+gap:11px;
+}
+
+.feature{
+padding:15px;
+}
+
+.coverage{
+gap:25px;
+}
+
+.coverage-map{
+min-height:280px;
+}
+
+.coverage-map:before{
+font-size:24px;
+}
+
+.pin span{
+font-size:8px;
+}
+
+.plan{
+padding:22px;
+}
+
+.plan.featured{
+transform:none;
+}
+
+.price{
+font-size:27px;
+}
+
+.contact{
+gap:15px;
+}
+
+.contact-card{
+padding:22px;
+}
+
+.academic{
+padding:48px 0;
+}
+
+.academic h2{
+font-size:27px;
+}
+
+.detail{
+max-height:calc(100vh - 16px);
+border-radius:18px;
+}
+
+.modal{
+padding:8px;
+}
+
+.detail-img{
+height:190px;
+}
+
+.detail-body{
+padding:23px 18px 27px;
+}
+
+.detail h2{
+font-size:26px;
+}
+
+.detail-desc{
+font-size:12px;
+}
+
+.detail ul{
+grid-template-columns:1fr;
+}
+
+footer .container{
+display:block;
+}
+
+footer .academic-link{
+display:block;
+margin-top:10px;
+}
+
+.whatsapp{
+width:52px;
+height:52px;
+right:15px;
+bottom:15px;
+font-size:22px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- BARRA SUPERIOR -->
+<header>
 
-<div class="topbar">
- <div class="container">
-  <span>Vida y Bienestar · Medicina Complementaria</span>
-  <span>Atención virtual · Domiciliaria · Orientación médica</span>
- </div>
+<div class="container nav">
+
+<a href="#inicio" class="brand">
+<div class="logo">+</div>
+<div>
+<strong>SALUDVITAL</strong>
+<small>VIDA Y BIENESTAR</small>
+</div>
+</a>
+
+<nav>
+
+<a href="#servicios">Servicios</a>
+<a href="#cobertura">Cobertura</a>
+<a href="#planes">Planes</a>
+<a href="#contacto">Contacto</a>
+
+<a class="nav-cta" href="https://wa.me/message/A63HLYLK6XGXI1" target="_blank">
+WhatsApp
+</a>
+
+<button class="menu-button" onclick="toggleMenu()" aria-label="Abrir menú">
+☰
+</button>
+
+</nav>
+
 </div>
 
-<!-- NAVEGACIÓN -->
+<div id="mobileMenu" class="mobile-menu">
 
-<header>
- <div class="container nav">
+<a href="#inicio" onclick="closeMenu()">Inicio</a>
+<a href="#servicios" onclick="closeMenu()">Servicios</a>
+<a href="#cobertura" onclick="closeMenu()">Cobertura de ambulancias</a>
+<a href="#planes" onclick="closeMenu()">Planes</a>
+<a href="#contacto" onclick="closeMenu()">Contacto</a>
+<a href="#ficha" onclick="closeMenu()">Proyecto académico</a>
 
-  <a class="brand" href="#inicio">
-   <div class="logo">+</div>
+<a href="https://wa.me/message/A63HLYLK6XGXI1" target="_blank">
+💬 Solicitar atención por WhatsApp
+</a>
 
-   <div>
-    <strong>SALUDVITAL</strong>
-    <span>VIDA Y BIENESTAR</span>
-   </div>
-  </a>
+</div>
 
-  <nav>
-   <a href="#servicios">Servicios</a>
-   <a href="#cobertura">Cobertura</a>
-   <a href="#planes">Planes</a>
-   <a href="#contacto">Contacto</a>
-
-   <a class="nav-cta"
-      href="https://wa.me/message/A63HLYLK6XGXI1"
-      target="_blank">
-      WhatsApp
-   </a>
-  </nav>
-
- </div>
 </header>
 
 <main>
 
-<!-- HERO -->
+<!-- INICIO -->
 
 <section class="hero" id="inicio">
 
- <div class="container hero-grid">
+<div class="container hero-grid">
 
-  <div>
+<div>
 
-   <div class="eyebrow">
-    <i></i>
-    CUIDAMOS DE TI Y DE LOS TUYOS
-   </div>
+<div class="eyebrow">
+<i></i>
+CUIDAMOS DE TI Y DE LOS TUYOS
+</div>
 
-   <h1>
-    Tu salud,<br>
-    <span style="color:var(--blue)">siempre contigo.</span>
-   </h1>
+<h1>
+Tu salud,<br>
+<span style="color:var(--blue)">siempre contigo.</span>
+</h1>
 
-   <p>
-    Servicios de medicina complementaria pensados para facilitar
-    el acceso a orientación médica, teleconsulta y atención domiciliaria.
-   </p>
+<p>
+Servicios de medicina complementaria pensados para facilitar el acceso a orientación médica, teleconsulta y atención domiciliaria.
+</p>
 
-   <div class="actions">
+<div class="actions">
 
-    <a class="btn btn-primary"
-       href="https://wa.me/message/A63HLYLK6XGXI1"
-       target="_blank">
-       💬 Solicitar atención
-    </a>
+<a class="btn btn-primary"
+href="https://wa.me/message/A63HLYLK6XGXI1"
+target="_blank">
+💬 Solicitar atención
+</a>
 
-    <a class="btn btn-secondary"
-       href="#servicios">
-       Conocer servicios →
-    </a>
+<a class="btn btn-secondary" href="#servicios">
+Conocer nuestros servicios →
+</a>
 
-   </div>
+</div>
 
-  </div>
+</div>
 
-  <div class="hero-photo">
+<div class="hero-photo">
 
-   <img
-    src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=85"
-    alt="Profesional de salud">
+<img
+src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=85"
+alt="Profesional de salud">
 
-   <div class="floating-card">
+<div class="floating-card">
 
-    <div class="check">✓</div>
+<div class="check">✓</div>
 
-    <div>
-     <b>Atención cercana</b>
-     <small>Donde la necesites</small>
-    </div>
+<div>
+<b>Atención cercana</b>
+<small>Donde la necesites</small>
+</div>
 
-   </div>
+</div>
 
-  </div>
+</div>
 
- </div>
+</div>
 
 </section>
 
-<!-- BENEFICIOS -->
+<!-- CONFIANZA -->
 
 <section class="trust">
 
- <div class="container trust-grid">
+<div class="container trust-grid">
 
-  <div class="trust-item">
+<div class="trust-item">
+<div class="trust-icon">📱</div>
+<div>
+<b>Atención por WhatsApp</b>
+<span>Un canal rápido para solicitar orientación.</span>
+</div>
+</div>
 
-   <div class="trust-icon">📱</div>
+<div class="trust-item">
+<div class="trust-icon">🏠</div>
+<div>
+<b>Servicios domiciliarios</b>
+<span>Opciones de atención en el lugar donde estás.</span>
+</div>
+</div>
 
-   <div>
-    <b>Atención por WhatsApp</b>
-    <span>Un canal rápido para solicitar orientación.</span>
-   </div>
+<div class="trust-item">
+<div class="trust-icon">💻</div>
+<div>
+<b>Teleconsulta</b>
+<span>Conecta con atención médica sin desplazarte.</span>
+</div>
+</div>
 
-  </div>
-
-  <div class="trust-item">
-
-   <div class="trust-icon">🏠</div>
-
-   <div>
-    <b>Servicios domiciliarios</b>
-    <span>Opciones de atención en el lugar donde estás.</span>
-   </div>
-
-  </div>
-
-  <div class="trust-item">
-
-   <div class="trust-icon">💻</div>
-
-   <div>
-    <b>Teleconsulta</b>
-    <span>Conecta con atención médica sin desplazarte.</span>
-   </div>
-
-  </div>
-
- </div>
+</div>
 
 </section>
 
@@ -1174,210 +1346,114 @@ footer .container{
 
 <section class="section" id="servicios">
 
- <div class="container">
+<div class="container">
 
-  <div class="section-head">
+<div class="section-head">
 
-   <div class="kicker">
-    Nuestros servicios
-   </div>
+<div class="kicker">Nuestros servicios</div>
 
-   <h2>
-    Atención pensada para tu tranquilidad
-   </h2>
+<h2>Atención pensada para tu tranquilidad</h2>
 
-   <p>
-    Conoce cada servicio y consulta la información completa
-    sin salir de esta página.
-   </p>
+<p>
+Conoce cada servicio y consulta la información completa sin salir de esta página.
+</p>
 
-  </div>
+</div>
 
-  <div class="services">
+<div class="services">
 
-   <!-- SERVICIO 1 -->
+<article class="service-card" onclick="openService('medica')">
 
-   <article class="service-card"
-            onclick="openService('medica')">
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=80" alt="Atención médica">
+</div>
 
-    <div class="service-img">
+<div class="service-body">
+<h3>Atención médica</h3>
+<p>Orientación y atención médica general para evaluar tus necesidades.</p>
+<button class="link-btn">Conocer servicio →</button>
+</div>
 
-     <img
-      src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=80"
-      alt="Atención médica">
+</article>
 
-    </div>
 
-    <div class="service-body">
+<article class="service-card" onclick="openService('teleconsulta')">
 
-     <h3>Atención médica</h3>
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=80" alt="Teleconsulta">
+</div>
 
-     <p>
-      Orientación y atención médica general
-      para evaluar tus necesidades.
-     </p>
+<div class="service-body">
+<h3>Teleconsulta</h3>
+<p>Atención virtual para facilitar la orientación médica a distancia.</p>
+<button class="link-btn">Conocer servicio →</button>
+</div>
 
-     <button class="link-btn">
-      Conocer servicio →
-     </button>
+</article>
 
-    </div>
 
-   </article>
+<article class="service-card" onclick="openService('domiciliario')">
 
-   <!-- SERVICIO 2 -->
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80" alt="Médico domiciliario">
+</div>
 
-   <article class="service-card"
-            onclick="openService('teleconsulta')">
+<div class="service-body">
+<h3>Médico domiciliario</h3>
+<p>Propuesta de atención médica en el domicilio, según disponibilidad.</p>
+<button class="link-btn">Conocer servicio →</button>
+</div>
 
-    <div class="service-img">
+</article>
 
-     <img
-      src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=80"
-      alt="Teleconsulta">
 
-    </div>
+<article class="service-card" onclick="openService('pediatria')">
 
-    <div class="service-body">
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1602030028438-4cf153cbae9e?auto=format&fit=crop&w=900&q=80" alt="Pediatría">
+</div>
 
-     <h3>Teleconsulta</h3>
+<div class="service-body">
+<h3>Pediatría domiciliaria</h3>
+<p>Valoración pediátrica y orientación para padres y cuidadores.</p>
+<button class="link-btn">Conocer servicio →</button>
+</div>
 
-     <p>
-      Atención virtual para facilitar
-      la orientación médica a distancia.
-     </p>
+</article>
 
-     <button class="link-btn">
-      Conocer servicio →
-     </button>
 
-    </div>
+<article class="service-card" onclick="openService('ambulancia')">
 
-   </article>
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=900&q=80" alt="Ambulancia">
+</div>
 
-   <!-- SERVICIO 3 -->
+<div class="service-body">
+<h3>Coordinación de ambulancia</h3>
+<p>Coordinación de acuerdo con prioridad, disponibilidad y cobertura.</p>
+<button class="link-btn">Conocer servicio →</button>
+</div>
 
-   <article class="service-card"
-            onclick="openService('domiciliario')">
+</article>
 
-    <div class="service-img">
 
-     <img
-      src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80"
-      alt="Médico domiciliario">
+<article class="service-card" onclick="openService('seguimiento')">
 
-    </div>
+<div class="service-img">
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Seguimiento clínico">
+</div>
 
-    <div class="service-body">
+<div class="service-body">
+<h3>Seguimiento clínico</h3>
+<p>Acompañamiento posterior para favorecer la continuidad de la atención.</p>
+<button class="link-btn">Conocer servicio →</button>
+</div>
 
-     <h3>Médico domiciliario</h3>
+</article>
 
-     <p>
-      Propuesta de atención médica
-      en el domicilio, según disponibilidad.
-     </p>
+</div>
 
-     <button class="link-btn">
-      Conocer servicio →
-     </button>
-
-    </div>
-
-   </article>
-
-   <!-- SERVICIO 4 -->
-
-   <article class="service-card"
-            onclick="openService('pediatria')">
-
-    <div class="service-img">
-
-     <img
-      src="https://images.unsplash.com/photo-1602030028438-4cf153cbae9e?auto=format&fit=crop&w=900&q=80"
-      alt="Pediatría domiciliaria">
-
-    </div>
-
-    <div class="service-body">
-
-     <h3>Pediatría domiciliaria</h3>
-
-     <p>
-      Valoración pediátrica y orientación
-      para padres y cuidadores.
-     </p>
-
-     <button class="link-btn">
-      Conocer servicio →
-     </button>
-
-    </div>
-
-   </article>
-
-   <!-- SERVICIO 5 -->
-
-   <article class="service-card"
-            onclick="openService('ambulancia')">
-
-    <div class="service-img">
-
-     <img
-      src="https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=900&q=80"
-      alt="Ambulancia">
-
-    </div>
-
-    <div class="service-body">
-
-     <h3>Coordinación de ambulancia</h3>
-
-     <p>
-      Coordinación de acuerdo con prioridad,
-      disponibilidad y cobertura.
-     </p>
-
-     <button class="link-btn">
-      Conocer servicio →
-     </button>
-
-    </div>
-
-   </article>
-
-   <!-- SERVICIO 6 -->
-
-   <article class="service-card"
-            onclick="openService('seguimiento')">
-
-    <div class="service-img">
-
-     <img
-      src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80"
-      alt="Seguimiento clínico">
-
-    </div>
-
-    <div class="service-body">
-
-     <h3>Seguimiento clínico</h3>
-
-     <p>
-      Acompañamiento posterior para favorecer
-      la continuidad de la atención.
-     </p>
-
-     <button class="link-btn">
-      Conocer servicio →
-     </button>
-
-    </div>
-
-   </article>
-
-  </div>
-
- </div>
+</div>
 
 </section>
 
@@ -1385,9 +1461,659 @@ footer .container{
 
 <section class="section alt">
 
- <div class="container why">
+<div class="container why">
 
-  <div class="why-photo">
+<div class="why-photo">
 
-   <img
-    src="https://images.unsplash.com/photo-1576091160550-2173dba99
+<img
+src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=85"
+alt="Atención de salud">
+
+</div>
+
+<div>
+
+<div class="kicker">¿Por qué SALUDVITAL?</div>
+
+<h2>Una experiencia de atención más cercana</h2>
+
+<p style="color:var(--muted);margin-top:15px">
+Nuestra propuesta busca facilitar el acceso a servicios de salud complementarios mediante canales digitales y atención coordinada.
+</p>
+
+<div class="features">
+
+<div class="feature">
+<b>Respuesta por WhatsApp</b>
+<span>Canal de contacto empresarial para orientar cada solicitud.</span>
+</div>
+
+<div class="feature">
+<b>Atención sin desplazamientos</b>
+<span>Teleconsulta y opciones domiciliarias según el servicio.</span>
+</div>
+
+<div class="feature">
+<b>Planes flexibles</b>
+<span>Alternativas individual, familiar y empresarial.</span>
+</div>
+
+<div class="feature">
+<b>Seguimiento</b>
+<span>Continuidad, satisfacción y gestión de oportunidades de mejora.</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- COMO FUNCIONA -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="kicker">Así funciona</div>
+
+<h2>Solicitar atención es sencillo</h2>
+
+<p>
+Un proceso diseñado para que el usuario sepa qué hacer desde el primer contacto.
+</p>
+
+</div>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-num">01 · CONTACTO</div>
+<h3>Escríbenos</h3>
+<p>Comunícate por nuestro canal empresarial de WhatsApp.</p>
+</div>
+
+<div class="step">
+<div class="step-num">02 · ORIENTACIÓN</div>
+<h3>Cuéntanos qué necesitas</h3>
+<p>Recibimos tu solicitud y orientamos el servicio adecuado.</p>
+</div>
+
+<div class="step">
+<div class="step-num">03 · COORDINACIÓN</div>
+<h3>Organizamos la atención</h3>
+<p>Coordinamos la alternativa disponible según el caso.</p>
+</div>
+
+<div class="step">
+<div class="step-num">04 · SEGUIMIENTO</div>
+<h3>Continuamos contigo</h3>
+<p>Registramos y damos seguimiento a la experiencia de atención.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- COBERTURA -->
+
+<section class="section alt" id="cobertura">
+
+<div class="container coverage">
+
+<div>
+
+<div class="kicker">Cobertura propuesta</div>
+
+<h2>Coordinación de ambulancias en Bogotá</h2>
+
+<p style="color:var(--muted);margin-top:15px">
+La propuesta contempla puntos de coordinación distribuidos estratégicamente para facilitar la gestión de solicitudes en diferentes zonas de Bogotá.
+</p>
+
+<div class="coverage-list">
+
+<div class="zone">
+<span>📍</span>
+<div>
+<b>Norte</b>
+<span>Usaquén · Suba</span>
+</div>
+</div>
+
+<div class="zone">
+<span>📍</span>
+<div>
+<b>Occidente</b>
+<span>Engativá · Fontibón</span>
+</div>
+</div>
+
+<div class="zone">
+<span>📍</span>
+<div>
+<b>Centro</b>
+<span>Chapinero · Centro</span>
+</div>
+</div>
+
+<div class="zone">
+<span>📍</span>
+<div>
+<b>Oriente y Sur</b>
+<span>San Cristóbal · Kennedy · Bosa · Ciudad Bolívar</span>
+</div>
+</div>
+
+</div>
+
+<p style="font-size:10px;color:#8095a3;margin-top:15px">
+* Ubicaciones simuladas/propuestas para fines académicos.
+</p>
+
+</div>
+
+<div class="coverage-map">
+
+<div class="pin p1"><span>Norte</span></div>
+<div class="pin p2"><span>Occidente</span></div>
+<div class="pin p3"><span>Centro</span></div>
+<div class="pin p4"><span>Oriente</span></div>
+<div class="pin p5"><span>Sur</span></div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PLANES -->
+
+<section class="section" id="planes">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="kicker">Planes</div>
+
+<h2>Opciones para diferentes necesidades</h2>
+
+<p>
+Valores y características planteados como parte de la propuesta académica.
+</p>
+
+</div>
+
+<div class="plans">
+
+<div class="plan">
+
+<h3>Individual</h3>
+
+<div class="price">
+$89.900 <small>/ mes</small>
+</div>
+
+<p>Una alternativa para atención individual.</p>
+
+<ul>
+<li>Orientación médica</li>
+<li>Teleconsulta</li>
+<li>Seguimiento clínico</li>
+<li>Acceso por WhatsApp</li>
+</ul>
+
+<a class="btn btn-secondary"
+href="https://wa.me/message/A63HLYLK6XGXI1"
+target="_blank">
+Solicitar información
+</a>
+
+</div>
+
+
+<div class="plan featured">
+
+<span class="badge">MÁS COMPLETO</span>
+
+<h3>Familiar</h3>
+
+<div class="price">
+$149.900 <small>/ mes</small>
+</div>
+
+<p>Una opción pensada para grupos familiares.</p>
+
+<ul>
+<li>Servicios para el grupo familiar</li>
+<li>Teleconsulta</li>
+<li>Orientación pediátrica</li>
+<li>Seguimiento clínico</li>
+</ul>
+
+<a class="btn btn-primary"
+href="https://wa.me/message/A63HLYLK6XGXI1"
+target="_blank">
+Solicitar información
+</a>
+
+</div>
+
+
+<div class="plan">
+
+<h3>Empresarial</h3>
+
+<div class="price">
+A medida
+</div>
+
+<p>Propuesta adaptable a las necesidades de cada organización.</p>
+
+<ul>
+<li>Orientación médica</li>
+<li>Teleconsulta</li>
+<li>Coordinación de servicios</li>
+<li>Seguimiento y PQRS</li>
+</ul>
+
+<a class="btn btn-secondary"
+href="https://wa.me/message/A63HLYLK6XGXI1"
+target="_blank">
+Hablar con nosotros
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section class="section alt" id="contacto">
+
+<div class="container contact">
+
+<div class="contact-card">
+
+<div class="kicker">Contacto</div>
+
+<h3>Estamos para orientarte</h3>
+
+<p style="color:var(--muted);font-size:13px;margin-bottom:20px">
+Utiliza nuestro canal empresarial de WhatsApp para consultar disponibilidad, servicios y planes.
+</p>
+
+<a class="btn btn-primary"
+href="https://wa.me/message/A63HLYLK6XGXI1"
+target="_blank">
+💬 Contactar por WhatsApp
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>Información</h3>
+
+<div class="contact-line">
+<span>📍</span>
+<div>
+<b>Oficina principal</b>
+<span>Cll 69A Sur #88D-24 · Bogotá D.C., Colombia</span>
+</div>
+</div>
+
+<div class="contact-line">
+<span>💬</span>
+<div>
+<b>WhatsApp empresarial</b>
+<span>Canal de orientación y atención</span>
+</div>
+</div>
+
+<div class="contact-line">
+<span>🕐</span>
+<div>
+<b>Atención</b>
+<span>Domingo a domingo · Según disponibilidad del servicio</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FICHA ACADÉMICA -->
+
+<section class="academic" id="ficha">
+
+<div class="container">
+
+<div class="kicker" style="color:#5bc8db">
+Proyecto académico
+</div>
+
+<h2>Ficha técnica — Vida y Bienestar</h2>
+
+<p>
+<b>Responsables:</b>
+Juan Castellanos · Jonathan Montoya · Michale Bermúdez · Slendy Niño
+</p>
+
+<p>
+<b>Propuesta:</b>
+Prestación de servicios de medicina complementaria mediante canales virtuales, atención médica general y pediátrica, servicios domiciliarios, coordinación de ambulancias y seguimiento clínico.
+</p>
+
+<p>
+<b>Recursos tecnológicos:</b>
+WhatsApp Business, sitio web, plataforma de videoconferencia, historia clínica electrónica, computadores, teléfonos e internet de alta velocidad.
+</p>
+
+<p>
+<b>Medios de pago propuestos:</b>
+Nequi, Daviplata, PSE y tarjetas.
+</p>
+
+<p>
+<b>Indicadores:</b>
+Satisfacción, auditoría de registros, tiempos de respuesta, seguimiento del paciente y gestión de PQRS.
+</p>
+
+<p>
+<b>Referencias normativas para consulta académica:</b>
+</p>
+
+<div class="laws">
+
+<span>Ley 100 de 1993</span>
+<span>Ley 1438 de 2011</span>
+<span>Ley Estatutaria 1751 de 2015</span>
+<span>Resolución 3100 de 2019</span>
+<span>Resolución 256 de 2016</span>
+<span>Ley 1581 de 2012</span>
+<span>Ley 23 de 1981</span>
+<span>REPS</span>
+<span>Decreto 780 de 2016</span>
+
+</div>
+
+<p style="margin-top:22px;font-size:10px">
+
+Nota: esta información, los precios, la cobertura y las ubicaciones de ambulancia son una simulación/propuesta con fines académicos y deben verificarse y ajustarse a la normativa vigente antes de cualquier operación real.
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<span>
+© 2026 SALUDVITAL · Vida y Bienestar – Medicina Complementaria
+</span>
+
+<a class="academic-link" href="#ficha">
+Proyecto académico
+</a>
+
+</div>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a class="whatsapp"
+href="https://wa.me/message/A63HLYLK6XGXI1"
+target="_blank"
+aria-label="WhatsApp">
+💬
+</a>
+
+<!-- MODAL SERVICIOS -->
+
+<div id="serviceView"
+class="modal"
+role="dialog"
+aria-modal="true"
+aria-labelledby="detailTitle">
+
+<div class="detail">
+
+<button class="close"
+onclick="closeService()"
+aria-label="Cerrar">
+×
+</button>
+
+<div class="detail-img">
+
+<img id="detailImage" src="" alt="">
+
+</div>
+
+<div class="detail-body">
+
+<div class="kicker">
+Información del servicio
+</div>
+
+<h2 id="detailTitle"></h2>
+
+<p class="detail-desc" id="detailDescription"></p>
+
+<h3>¿Qué incluye?</h3>
+
+<ul id="detailList"></ul>
+
+<a class="btn btn-primary"
+href="https://wa.me/message/A63HLYLK6XGXI1"
+target="_blank">
+💬 Consultar por WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* MENU MOVIL */
+
+function toggleMenu(){
+
+const menu=document.getElementById("mobileMenu");
+
+menu.classList.toggle("active");
+
+}
+
+function closeMenu(){
+
+document.getElementById("mobileMenu").classList.remove("active");
+
+}
+
+/* SERVICIOS */
+
+const services={
+
+medica:{
+title:"Atención médica",
+description:"Servicio propuesto de orientación y atención médica general para identificar las necesidades del usuario y orientarlo hacia la alternativa de atención correspondiente.",
+image:"https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=85",
+items:[
+"Orientación médica general",
+"Valoración inicial",
+"Acompañamiento al usuario",
+"Orientación sobre rutas de atención",
+"Seguimiento según necesidad",
+"Atención humana y personalizada"
+]
+},
+
+teleconsulta:{
+title:"Teleconsulta",
+description:"Atención médica virtual mediante herramientas digitales, diseñada para facilitar la orientación desde el hogar, la oficina o cualquier lugar con conexión a internet.",
+image:"https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=85",
+items:[
+"Atención virtual",
+"Videollamada",
+"Orientación médica",
+"Ahorro de desplazamientos",
+"Atención desde cualquier lugar",
+"Seguimiento del usuario"
+]
+},
+
+domiciliario:{
+title:"Médico domiciliario",
+description:"Propuesta de atención médica en el hogar, especialmente útil para personas que presentan dificultades para desplazarse o que requieren una valoración en su entorno.",
+image:"https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=85",
+items:[
+"Atención en el domicilio",
+"Valoración médica",
+"Atención cercana y humana",
+"Orientación a paciente y familia",
+"Seguimiento clínico",
+"Coordinación de servicios complementarios"
+]
+},
+
+pediatria:{
+title:"Pediatría domiciliaria",
+description:"Propuesta de atención pediátrica domiciliaria orientada a brindar acompañamiento a niños y familias, reduciendo desplazamientos innecesarios.",
+image:"https://images.unsplash.com/photo-1602030028438-4cf153cbae9e?auto=format&fit=crop&w=1200&q=85",
+items:[
+"Atención pediátrica",
+"Valoración del menor",
+"Orientación a padres y cuidadores",
+"Atención en el hogar",
+"Seguimiento",
+"Acompañamiento familiar"
+]
+},
+
+ambulancia:{
+title:"Coordinación de ambulancia",
+description:"Coordinación propuesta de transporte asistencial mediante una distribución estratégica de cobertura en Bogotá, siempre sujeta a disponibilidad, prioridad y condiciones operativas.",
+image:"https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=1200&q=85",
+items:[
+"Coordinación de ambulancia",
+"Cobertura propuesta en Bogotá",
+"Priorización de solicitudes",
+"Comunicación con el usuario",
+"Seguimiento de la solicitud",
+"Disponibilidad según operación"
+]
+},
+
+seguimiento:{
+title:"Seguimiento clínico",
+description:"Acompañamiento posterior a la atención para mantener una comunicación organizada con el usuario y favorecer la continuidad de su proceso de atención.",
+image:"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85",
+items:[
+"Seguimiento al usuario",
+"Registro de información",
+"Control de evolución",
+"Comunicación con el paciente",
+"Orientación posterior",
+"Acompañamiento personalizado"
+]
+}
+
+};
+
+function openService(key){
+
+const service=services[key];
+
+document.getElementById("detailTitle").textContent=service.title;
+
+document.getElementById("detailDescription").textContent=service.description;
+
+document.getElementById("detailImage").src=service.image;
+
+document.getElementById("detailImage").alt=service.title;
+
+const list=document.getElementById("detailList");
+
+list.innerHTML="";
+
+service.items.forEach(function(item){
+
+const li=document.createElement("li");
+
+li.textContent="✓ "+item;
+
+list.appendChild(li);
+
+});
+
+document.getElementById("serviceView").classList.add("active");
+
+document.body.classList.add("no-scroll");
+
+}
+
+function closeService(){
+
+document.getElementById("serviceView").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
+
+}
+
+/* CERRAR MODAL AL TOCAR AFUERA */
+
+document.getElementById("serviceView").addEventListener("click",function(event){
+
+if(event.target===this){
+
+closeService();
+
+}
+
+});
+
+/* CERRAR CON ESC */
+
+document.addEventListener("keydown",function(event){
+
+if(event.key==="Escape"){
+
+closeService();
+
+closeMenu();
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
